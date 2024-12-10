@@ -1,0 +1,54 @@
+{
+  "name": "todo-organizer",
+  "displayName": "TODO Organizer",
+  "description": "Плагин для управления TODO-комментариями в проекте",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./dist/extension.js",
+  "activationEvents": [
+  ],
+
+  "contributes": {
+    "commands": [
+      {
+        "command": "todo-organizer.refresh",
+        "title": "Обновить список TODO"
+      },
+      {
+        "command": "todo-organizer.filter",
+        "title": "Фильтровать задачи"
+      },
+      {
+        "command": "todo-organizer.goToTodo",
+        "title": "Перейти к TODO"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "todoView",
+          "name": "TODOs"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "todo-organizer.refresh",
+        "key": "ctrl+shift+r"
+      },
+      {
+        "command": "todo-organizer.filter",
+        "key": "ctrl+shift+f"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "compile": "tsc"
+  }
+}
